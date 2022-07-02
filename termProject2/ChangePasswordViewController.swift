@@ -13,7 +13,7 @@ class ChangePasswordViewController: UIViewController {
     
     @IBOutlet weak var newPasswordLbl: UITextField!
     
-    private var existingPassword:String! = "pwd1"
+    private var existingPassword:String! = Credentials.password
     
     private var validationMessage:String! = ""
     
@@ -42,6 +42,7 @@ class ChangePasswordViewController: UIViewController {
             validationMessage = "Incorrect old password"
         }else
         {
+            Credentials.password = newPasswordLbl.text!
             validationMessage = "Password changed succesfully!"
             isError = false
             

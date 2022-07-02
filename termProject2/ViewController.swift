@@ -7,6 +7,11 @@
 
 import UIKit
 
+struct Credentials {
+    static var username = "user1"
+    static var password = "pwd1"
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -22,8 +27,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var forgotPwdButton: UIButton!
     
-    let userId = "user1"
-    let pwd = "pwd1"
+    let userId = Credentials.username
+    let pwd = Credentials.password
     
     @IBAction func forgotPassword(_ sender: UIButton) {
 
