@@ -69,9 +69,12 @@ class ChangePasswordViewController: UIViewController {
     func onAlertDismissed(shouldNavigateToLogin : Bool){
         if(shouldNavigateToLogin)
         {
-//            navigationController?.popViewController(animated: true)
+            loginViewCtrl = storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController
             
-            self.dismiss(animated: true)
+            loginViewCtrl.modalPresentationStyle = .fullScreen
+            self.present(loginViewCtrl, animated: true, completion: nil)
+            self.navigationController?.pushViewController(loginViewCtrl, animated: true)
+            
         }
     }
 }
